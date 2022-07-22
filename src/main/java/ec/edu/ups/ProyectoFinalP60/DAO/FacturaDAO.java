@@ -30,7 +30,7 @@ public class FacturaDAO {
 	}
 	
 	public List<FacturaCabecera> getFactura(){
-		String jpql = "Select c from Factura c";
+		String jpql = "Select f from Factura f";
 		Query q = em.createQuery(jpql,FacturaCabecera.class);
 		return q.getResultList();
 	}

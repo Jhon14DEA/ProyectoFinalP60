@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+
+
 @Entity
 public class DetalleFactura implements Serializable{
 	
@@ -26,6 +28,20 @@ public class DetalleFactura implements Serializable{
 	@OneToOne
 	@JoinColumn(name = "ped_codigo")
 	private  Pedido pedido;
+	
+	public DetalleFactura() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public DetalleFactura(int codigo, int cantidad, double precio, Pedido pedido) {
+		super();
+		this.codigo = codigo;
+		this.cantidad = cantidad;
+		this.precio = precio;
+		this.pedido = pedido;
+	}
+
 
 	public int getCodigo() {
 		return codigo;

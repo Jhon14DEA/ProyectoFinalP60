@@ -39,7 +39,7 @@ public class CalificacionDAO implements Serializable{
 		return null;
 	}
 	
-	public List<Calificacion> list(){
+	public List<Calificacion> getlist(){
 		String jpql = "SELECT c FROM Calificacion c";
 		Query query =  em.createQuery(jpql, Calificacion.class);
 		return query.getResultList();

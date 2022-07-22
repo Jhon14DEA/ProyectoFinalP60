@@ -2,6 +2,7 @@ package ec.edu.ups.ProyectoFinalP60.modelo;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,12 +17,26 @@ public class Pedido implements Serializable{
 	
 	@Id
 	@GeneratedValue
+	@Column(name = "ped_codigo")
 	private int codigo;	
 	private String orden;
 	private int cantidad;
 	private double precio;	
 	private double total;
 	
+	public Pedido() {}
+	
+	
+	public Pedido(int codigo, String orden, int cantidad, double precio, double total) {
+		super();
+		this.codigo = codigo;
+		this.orden = orden;
+		this.cantidad = cantidad;
+		this.precio = precio;
+		this.total = total;
+	}
+
+
 	public int getCodigo() {
 		return codigo;
 	}

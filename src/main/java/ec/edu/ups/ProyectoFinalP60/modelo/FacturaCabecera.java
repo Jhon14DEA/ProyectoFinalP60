@@ -2,7 +2,6 @@ package ec.edu.ups.ProyectoFinalP60.modelo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+
 
 
 @Entity
@@ -37,30 +38,40 @@ public class FacturaCabecera implements Serializable{
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<DetalleFactura> listaDetalles;
 	
+	public FacturaCabecera() {}
 
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
 
 	public String getFecha() {
 		return fecha;
 	}
+
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
+
 	public Cliente getCliente() {
 		return cliente;
 	}
+
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+
 	public List<DetalleFactura> getListaDetalles() {
 		return listaDetalles;
 	}
+
 	public void setListaDetalles(List<DetalleFactura> listaDetalles) {
 		this.listaDetalles = listaDetalles;
 	}
-	
+
 	public void addDetalle(DetalleFactura detalle) {
 		if (listaDetalles == null) {
 			listaDetalles = new ArrayList<DetalleFactura>();
@@ -68,11 +79,14 @@ public class FacturaCabecera implements Serializable{
 		}
 		listaDetalles.add(detalle);
 	}
+	
 	@Override
 	public String toString() {
 		return "FacturaCabecera [codigo=" + codigo + ", fecha=" + fecha + ", cliente=" + cliente + ", listaDetalles="
 				+ listaDetalles + "]";
 	}
+	
+	
 	
 	
 

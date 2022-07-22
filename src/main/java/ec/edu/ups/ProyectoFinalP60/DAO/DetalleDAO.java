@@ -9,7 +9,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 
-
 @Stateless
 public class DetalleDAO {
 
@@ -30,7 +29,7 @@ public class DetalleDAO {
 	}
 	
 	public List<DetalleFactura> getDetalleFactura(){
-		String jpql = "Select c from DetalleFactura c";
+		String jpql = "Select d from DetalleFactura d";
 		Query q = em.createQuery(jpql,DetalleFactura.class);
 		return q.getResultList();
 	}

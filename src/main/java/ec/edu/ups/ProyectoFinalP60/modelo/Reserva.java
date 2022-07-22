@@ -2,13 +2,16 @@
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "TBL_RESERVA")
 public class Reserva implements Serializable{
 
 	/**
@@ -18,18 +21,28 @@ public class Reserva implements Serializable{
 	
 	@Id
 	@GeneratedValue
+	@Column(name = "res_codigo")
 	private int codigo;
 	private String fechaIngreso;
 	private String fechaSalida;
 	private int numeroPersona;
 	private int numeroMesa;
 	private String valor;
+
+	public Reserva() {
+		
+	}
 	
-	
-	@OneToOne
-	@JoinColumn(name = "cli_cedula")
-	private Cliente cliente;
-	
+	public Reserva(int codigo, String fechaIngreso, String fechaSalida, int numeroPersona, int numeroMesa,
+			String valor) {
+		super();
+		this.codigo = codigo;
+		this.fechaIngreso = fechaIngreso;
+		this.fechaSalida = fechaSalida;
+		this.numeroPersona = numeroPersona;
+		this.numeroMesa = numeroMesa;
+		this.valor = valor;
+	}
 	public int getCodigo() {
 		return codigo;
 	}
@@ -61,12 +74,7 @@ public class Reserva implements Serializable{
 	public void setNumeroMesa(int numeroMesa) {
 		this.numeroMesa = numeroMesa;
 	}
-	public Cliente getCliente() {
-		return cliente;
-	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
+
 	
 	
 	public String getValor() {
@@ -78,9 +86,9 @@ public class Reserva implements Serializable{
 	@Override
 	public String toString() {
 		return "Reserva [codigo=" + codigo + ", fechaIngreso=" + fechaIngreso + ", fechaSalida=" + fechaSalida
-				+ ", numeroPersona=" + numeroPersona + ", numeroMesa=" + numeroMesa + ", valor=" + valor + ", cliente="
-				+ cliente + "]";
+				+ ", numeroPersona=" + numeroPersona + ", numeroMesa=" + numeroMesa + ", valor=" + valor + "]";
 	}
+
 	
 	
 	

@@ -11,7 +11,6 @@ import javax.persistence.Query;
 import ec.edu.ups.ProyectoFinalP60.modelo.Cliente;
 
 
-
 @Stateless
 public class ClienteDAO implements Serializable{
 
