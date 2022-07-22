@@ -3,6 +3,7 @@ package ec.edu.ups.ProyectoFinalP60.modelo;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
@@ -14,8 +15,10 @@ public class Pedido implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private int codigo;
+	@GeneratedValue
+	private int codigo;	
 	private String orden;
+	private int cantidad;
 	private double precio;	
 	private double total;
 	
@@ -30,7 +33,7 @@ public class Pedido implements Serializable{
 	}
 	public void setOrden(String orden) {
 		this.orden = orden;
-	}
+	}	
 	public double getPrecio() {
 		return precio;
 	}
@@ -42,6 +45,12 @@ public class Pedido implements Serializable{
 	}
 	public void setTotal(double total) {
 		this.total = total;
+	}
+	public int getCantidad() {
+		return cantidad;
+	}
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
 	}
 	@Override
 	public String toString() {

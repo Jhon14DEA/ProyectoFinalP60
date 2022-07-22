@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 public class Reserva implements Serializable{
 
 	/**
-	 *
+	 *RESERVACIO PUEDE QUEDAR SIEMPRE EN UN TIEMPO DETERMINADO "2 HORAS"
 	 */
 	private static final long serialVersionUID = 1L;
 	
@@ -21,8 +21,10 @@ public class Reserva implements Serializable{
 	private int codigo;
 	private String fechaIngreso;
 	private String fechaSalida;
-	private int numeroPersana;
+	private int numeroPersona;
 	private int numeroMesa;
+	private String valor;
+	
 	
 	@OneToOne
 	@JoinColumn(name = "cli_cedula")
@@ -46,11 +48,12 @@ public class Reserva implements Serializable{
 	public void setFechaSalida(String fechaSalida) {
 		this.fechaSalida = fechaSalida;
 	}
-	public int getNumeroPersana() {
-		return numeroPersana;
+	
+	public int getNumeroPersona() {
+		return numeroPersona;
 	}
-	public void setNumeroPersana(int numeroPersana) {
-		this.numeroPersana = numeroPersana;
+	public void setNumeroPersona(int numeroPersona) {
+		this.numeroPersona = numeroPersona;
 	}
 	public int getNumeroMesa() {
 		return numeroMesa;
@@ -64,11 +67,21 @@ public class Reserva implements Serializable{
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	
+	
+	public String getValor() {
+		return valor;
+	}
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
 	@Override
 	public String toString() {
 		return "Reserva [codigo=" + codigo + ", fechaIngreso=" + fechaIngreso + ", fechaSalida=" + fechaSalida
-				+ ", numeroPersana=" + numeroPersana + ", numeroMesa=" + numeroMesa + ", cliente=" + cliente + "]";
-	}	
+				+ ", numeroPersona=" + numeroPersona + ", numeroMesa=" + numeroMesa + ", valor=" + valor + ", cliente="
+				+ cliente + "]";
+	}
+	
 	
 	
 
