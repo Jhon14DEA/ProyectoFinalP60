@@ -16,28 +16,6 @@ import ec.edu.ups.ProyectoFinalP60.modelo.Calificacion;
 @Path("restaurante")
 public class CalificacionService {
 	
-	@Inject
-	private CalificacionDAO calificacionON;
 	
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public Respuesta crearCalificacion(Calificacion calificacion) {
-		Respuesta respuesta;
-		try {
-			calificacionON.insert(calificacion);
-			respuesta = new Respuesta(1, "Guardado Satisfactoriamente");
-		} catch (Exception e) {
-			respuesta = new Respuesta(2,"No se guardo"+e.getMessage());
-		}
-		return respuesta;
-	}
-	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Calificacion> getCalificaciones(){
-		List<Calificacion> calificaciones = calificacionON.getlist();
-		return calificaciones;
-	}
 	
 }

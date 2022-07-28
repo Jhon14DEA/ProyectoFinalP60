@@ -21,9 +21,9 @@ public class Cliente implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "cli_cedula")
-	private String Cedula;
+	private String cedula;
 	private String nombre;
-	private String Apellido;
+	private String apellido;
 	private String direccion;
 	private String e_mail;
 	
@@ -36,11 +36,11 @@ public class Cliente implements Serializable{
 	private List<Reserva> listaReservas;
 
 	public String getCedula() {
-		return Cedula;
+		return cedula;
 	}
 
 	public void setCedula(String cedula) {
-		Cedula = cedula;
+		cedula = cedula;
 	}
 
 	public String getNombre() {
@@ -52,11 +52,11 @@ public class Cliente implements Serializable{
 	}
 
 	public String getApellido() {
-		return Apellido;
+		return apellido;
 	}
 
 	public void setApellido(String apellido) {
-		Apellido = apellido;
+		apellido = apellido;
 	}
 
 	public String getDireccion() {
@@ -93,7 +93,7 @@ public class Cliente implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Cliente [Cedula=" + Cedula + ", nombre=" + nombre + ", Apellido=" + Apellido + ", direccion="
+		return "Cliente [Cedula=" + cedula + ", nombre=" + nombre + ", Apellido=" + apellido + ", direccion="
 				+ direccion + ", e_mail=" + e_mail + ", pedido=" + pedido + ", listaReservas=" + listaReservas + "]";
 	}
 

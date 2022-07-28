@@ -14,15 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-
-
-
 @Entity
 public class FacturaCabecera implements Serializable{
 
-	/**
-	 *
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "fac_codigo")

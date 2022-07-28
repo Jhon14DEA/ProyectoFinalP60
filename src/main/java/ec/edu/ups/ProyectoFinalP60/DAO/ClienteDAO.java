@@ -37,7 +37,7 @@ public class ClienteDAO implements Serializable{
 		return null;	
 	}
 	
-	public List<Cliente> list(){
+	public List<Cliente> getlist(){
 		String jpql = "SELECT c FROM Cliente c";
 		Query query = em.createQuery(jpql, Cliente.class);
 		return query.getResultList();
